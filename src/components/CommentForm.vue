@@ -17,15 +17,19 @@ export default {
   },
   methods: {
     addComment() {
-      BlogService.commentPost(this.post.id, this.commentText)
-        .then(response => {
-          console.log('Comment added:', response);
-          this.commentText = ''; 
-          this.$emit('commentAdded');
-        })
-        .catch(error => {
-          console.error('Error adding comment:', error);
-        });
+      if (this.commentText.trim() !== '') {
+        BlogService.commentPost(this.post.id, this.commentText)
+          .then(response => {
+            console.log('Comment added:', response);
+            this.commentText = ''; 
+            this.$emit('commentAdded');
+          })
+          .catch(error => {
+            console.error('Error adding comment:', error);
+          });
+      } else {
+        this.$emit('commentAdded');
+      }
     }
   }
 };
