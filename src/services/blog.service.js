@@ -14,15 +14,15 @@ class BlogService {
   }
 
   getAllComments(id) {
-    return axios.get(API_URL + id + '/comments/', { headers: authHeader() });
+    return axios.get(API_URL + id + '/comments/list/', { headers: authHeader() });
   }
 
   commentPost(id, comment) {
-    return axios.post(API_URL + id + '/add_comment/', { comment }, { headers: authHeader() });
+    return axios.post(API_URL + id + '/comments/create/', { comment }, { headers: authHeader() });
   }
 
   deletePost(id) {
-    return axios.delete(API_URL + id + '/delete/', { headers: authHeader() });
+    return axios.delete(API_URL + id + '/', { headers: authHeader() });
   }
 
   createPost(title, content) {
@@ -30,11 +30,11 @@ class BlogService {
   }
 
   publishPost(id) {
-    return axios.put(API_URL + id + '/update/', { status:'published' }, { headers: authHeader() });
+    return axios.patch(API_URL + id + '/', { status:'published' }, { headers: authHeader() });
   }
 
   unpublishPost(id) {
-    return axios.put(API_URL + id + '/update/', { status:'draft' }, { headers: authHeader() });
+    return axios.patch(API_URL + id + '/', { status:'draft' }, { headers: authHeader() });
   }
 }
 

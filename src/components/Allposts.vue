@@ -1,5 +1,6 @@
 <template>
   <div class="post-list">    
+    <h2> All posts </h2>
     <div v-if="isLoading">Loading posts...</div>
     <ul v-else-if="!content.length">No posts found.</ul>
     <div v-else class="card" v-for="post in content" :key="post.id">
@@ -9,7 +10,7 @@
         <button v-if="currentUser" class="form-button" @click="selectPost(post)">Comment</button>
       </div>      
       <CommentForm v-if="selectedPost && selectedPost.id === post.id" :post="selectedPost" @commentAdded="selectedPost = null; refreshComments()" />
-      <CommentList v-if="currentUser" :post="post" :key="commentListKey" />
+      <CommentList :post="post" :key="commentListKey" />
     </div>
   </div>
 </template>

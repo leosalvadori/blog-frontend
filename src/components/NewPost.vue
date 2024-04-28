@@ -1,7 +1,7 @@
 <template>
   <div class="new-post">
+    <h2>New Post</h2> 
     <form @submit.prevent="createPost" class="new-post-form">
-      <h2>New Post</h2> 
       <input type="text" placeholder="Title" v-model="title" class="form-input" />
       <textarea placeholder="Content" v-model="content" class="form-input form-textarea"></textarea>
       <button type="submit" class="form-button">Create Post</button>
