@@ -64,7 +64,8 @@ export default {
         .string()
         .required("Username is required!")
         .min(3, "Must be at least 3 characters!")
-        .max(20, "Must be maximum 20 characters!"),
+        .max(20, "Must be maximum 20 characters!")
+        .matches(/^\S*$/, "Username cannot contain spaces"),
       email: yup
         .string()
         .required("Email is required!")
