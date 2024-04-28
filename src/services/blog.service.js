@@ -1,8 +1,8 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-//const API_URL = 'https://fdps7qnhai.us-east-1.awsapprunner.com/api/v1/posts/';
-const API_URL = 'http://localhost:8000/api/v1/posts/';
+const API_URL = 'https://fdps7qnhai.us-east-1.awsapprunner.com/api/v1/posts/';
+// const API_URL = 'http://localhost:8000/api/v1/posts/';
 
 class BlogService {
   getAllPosts() {

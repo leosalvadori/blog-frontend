@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-//const API_URL = 'https://fdps7qnhai.us-east-1.awsapprunner.com/api/v1/authentication/';
-const API_URL = 'http://localhost:8000/api/v1/authentication/';
+const API_URL = 'https://fdps7qnhai.us-east-1.awsapprunner.com/api/v1/authentication/';
+// const API_URL = 'http://localhost:8000/api/v1/authentication/';
 
 class AuthService {
     login(user) {
