@@ -1,5 +1,6 @@
 <template>
   <div class="post-list">    
+    <h2> All posts </h2>
     <div v-if="isLoading">Loading posts...</div>
     <ul v-else-if="!content.length">No posts found.</ul>
     <div v-else class="card" v-for="post in content" :key="post.id">
